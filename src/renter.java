@@ -52,6 +52,30 @@ public class renter {
 
 
 }
+ public void Register(String u,String ps,String n,String ph,String e) throws SQLException
+   {
+       Connection_app conn1 = new Connection_app() ;
+       Connection conn = null;
+       conn =conn1.Create_conn() ;
+   try {
+    String query;
+    query = "insert * into dbo.\"renter\"(username,password,name,phonenumber,email,age,gender)values(?,?,?,?,?,?,?,?)";
+   
+    PreparedStatement pst = conn.prepareStatement(query);
+    pst.setString(1, u);
+    pst.setString(2, ps);
+    pst.setString(3, n);
+    pst.setString(4, ph);
+    pst.setString(5, e);
+    
+   
+    }
+   catch(HeadlessException | SQLException err){
+            JOptionPane.showMessageDialog(null, e);
+        }
+   
+   
+   }
 
     
 }

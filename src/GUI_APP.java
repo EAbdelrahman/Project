@@ -189,16 +189,21 @@ String y ;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 User us= new User();
 renter ren = new renter ();
+Register_GUI reg = new Register_GUI();
+Register_Renter regRent= new Register_Renter() ;
 if (jComboBox1.getSelectedIndex()==1){
     try {
         ren.Login(username.getText(), passwoed.getText());
+        regRent.setVisible(true);
+        
     } catch (SQLException ex) {
         Logger.getLogger(GUI_APP.class.getName()).log(Level.SEVERE, null, ex);
     }
 
 }
 else {       try {
-            us.Login(username.getText(), passwoed.getText());          // TODO add your handling code here:
+            us.Login(username.getText(), passwoed.getText());
+            reg.setVisible(true);// TODO add your handling code here:
         } catch (SQLException ex) {
             Logger.getLogger(GUI_APP.class.getName()).log(Level.SEVERE, null, ex);
         }}
