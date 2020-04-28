@@ -188,11 +188,20 @@ String y ;
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 User us= new User();
-        try {
+renter ren = new renter ();
+if (jComboBox1.getSelectedIndex()==1){
+    try {
+        ren.Login(username.getText(), passwoed.getText());
+    } catch (SQLException ex) {
+        Logger.getLogger(GUI_APP.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
+}
+else {       try {
             us.Login(username.getText(), passwoed.getText());          // TODO add your handling code here:
         } catch (SQLException ex) {
             Logger.getLogger(GUI_APP.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }}
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void passwoedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwoedActionPerformed
@@ -202,7 +211,7 @@ String x ;
     }//GEN-LAST:event_passwoedActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+ String selectedValue = jComboBox1.getSelectedItem().toString() ;        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**

@@ -50,7 +50,7 @@ public class User  {
        conn =conn1.Create_conn() ;
    try {
     String sql;
-    sql = "select * from user where username = ? and password = ?";
+    sql = "select * from dbo.\"user\" where username = ? and password = ?";
    
     PreparedStatement pst = conn.prepareStatement(sql);
     pst.setString(1, x);
