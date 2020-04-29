@@ -99,6 +99,11 @@ import sun.security.util.Password;
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Register");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,10 +196,12 @@ User us= new User();
 renter ren = new renter ();
 Register_GUI reg = new Register_GUI();
 Register_Renter regRent= new Register_Renter() ;
+GUI_APP main = new GUI_APP();
 if (jComboBox1.getSelectedIndex()==1){
     try {
         ren.Login(username.getText(), passwoed.getText());
         regRent.setVisible(true);
+        main.setVisible(false);
         
     } catch (SQLException ex) {
         Logger.getLogger(GUI_APP.class.getName()).log(Level.SEVERE, null, ex);
@@ -203,7 +210,8 @@ if (jComboBox1.getSelectedIndex()==1){
 }
 else {       try {
             us.Login(username.getText(), passwoed.getText());
-            reg.setVisible(true);// TODO add your handling code here:
+            reg.setVisible(true);
+        main.setVisible(false);// TODO add your handling code here:
         } catch (SQLException ex) {
             Logger.getLogger(GUI_APP.class.getName()).log(Level.SEVERE, null, ex);
         }}
@@ -218,6 +226,22 @@ String x ;
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
  String selectedValue = jComboBox1.getSelectedItem().toString() ;        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+if (jComboBox1.getSelectedIndex()==2){
+Register_GUI reg_user= new Register_GUI();
+reg_user.setVisible(true);
+GUI_APP main= new GUI_APP();
+main.setVisible(false);
+} 
+else {
+    Register_Renter reg_renter = new Register_Renter();
+    GUI_APP main= new GUI_APP();
+    reg_renter.setVisible(true);
+    main.setVisible(false);
+
+}
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

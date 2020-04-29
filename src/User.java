@@ -53,6 +53,10 @@ public class User  {
     sql = "select * from dbo.\"user\" where username = ? and password = ?";
    
     PreparedStatement pst = conn.prepareStatement(sql);
+    
+    
+    
+    
     pst.setString(1, x);
     pst.setString(2, y);
    ResultSet rs = pst.executeQuery();
