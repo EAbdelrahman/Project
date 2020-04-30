@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  * @author kc
  */
 public class renter {
+    
  public void Login(String x,String y) throws SQLException{
        Connection  conn = null ;
        Connection_app conn1 = new Connection_app() ;
@@ -76,6 +77,28 @@ public class renter {
    
    
    }
+ public void Add_unit(String rn ,String addr ,String area,String desc,String mate_no,String price ,String rnum) throws SQLException
+ {
+     Connection  conn = null ;
+       Connection_app conn1 = new Connection_app() ;
+       conn =conn1.Create_conn() ;
+       String query;
+    query = "insert * into dbo.\"Apartement\"(username,address,area,description,mates,price,rnum)values(?,?,?,?,?,?,?,?)";
+     PreparedStatement pst = conn.prepareStatement(query);
+     pst.setString(1, rn);
+     pst.setString(2, addr);
+     pst.setString(3, area);
+     pst.setString(4, desc);
+     pst.setString(5, mate_no);
+     pst.setString(6, price);
+     pst.setString(7, price);
+     pst.setString(8, rnum);   
+     
+    
+     
+ 
+ 
+ }
 
     
 }
