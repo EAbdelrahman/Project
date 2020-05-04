@@ -149,7 +149,7 @@ import java.util.logging.Logger;
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("MY Roomy");
+        jLabel6.setText("My-Roomy");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 230, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 450, 510));
